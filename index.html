@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f5ed">
+    <title>Daymark — make room for what matters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="material-components.js"></script>
+    <script src="hello.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="wordmark" href="index.html" aria-label="Daymark home"><span class="brand-mark"><md-icon>check</md-icon></span>Daymark</a>
+        <span class="top-note">A little more intentional</span>
+      </header>
+
+      <section class="workspace" aria-labelledby="page-title">
+        <div class="intro">
+          <div class="date-line"><md-icon>today</md-icon><span id="date-label"></span></div>
+          <h1 id="page-title">Make room for what matters.</h1>
+          <p class="intro-copy">One thing at a time is still progress.</p>
+        </div>
+
+        <form class="task-composer" id="task-form">
+          <label class="visually-hidden" for="task-input">Add a task</label>
+          <md-icon class="composer-icon" aria-hidden="true">add</md-icon>
+          <input id="task-input" name="task" type="text" placeholder="What needs your attention?" maxlength="180" autocomplete="off" required>
+          <button class="add-button" type="submit"><md-icon aria-hidden="true">add</md-icon><span>Add task</span></button>
+        </form>
+
+        <section class="list-section" aria-label="Your tasks">
+          <div class="list-heading">
+            <div class="list-title-wrap"><h2>Today</h2><span class="task-count" id="task-count" aria-live="polite"></span></div>
+            <button class="clear-button" id="clear-completed" type="button" hidden>Clear completed</button>
+          </div>
+
+          <div class="list-tools">
+            <div class="filters" role="group" aria-label="Filter tasks">
+              <md-filter-chip class="filter-button" data-filter="all" role="button" aria-pressed="true" selected>All</md-filter-chip>
+              <md-filter-chip class="filter-button" data-filter="active" role="button" aria-pressed="false">To do</md-filter-chip>
+              <md-filter-chip class="filter-button" data-filter="completed" role="button" aria-pressed="false">Done</md-filter-chip>
+            </div>
+            <span class="list-hint">Your pace, your order</span>
+          </div>
+
+          <ul class="task-list" id="task-list" aria-live="polite"></ul>
+        </section>
+
+        <footer class="quiet-footer"><span class="footer-spark" aria-hidden="true">&#10022;</span> Small steps add up.</footer>
+      </section>
+    </main>
+  </body>
+</html>
